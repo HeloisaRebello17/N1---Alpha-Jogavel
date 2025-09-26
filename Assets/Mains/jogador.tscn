@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://dj2bm6lo3cv7p"]
+
+[ext_resource type="Script" uid="uid://brjyq1dsh8cdw" path="res://assets/Mains/jogador.gd" id="1_17ar3"]
+[ext_resource type="Texture2D" uid="uid://dyce7kjn5x8i5" path="res://assets/Imagens/up (2).png" id="2_17ar3"]
+[ext_resource type="Texture2D" uid="uid://sivpdlv4hxt3" path="res://assets/Imagens/down (2).png" id="3_vdblr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h0a55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_17ar3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vdblr")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n20a5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wpoev"]
+radius = 32.1403
+
+[node name="Jogador" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_17ar3")
+
+[node name="AnimSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.365847, 0.521631)
+sprite_frames = SubResource("SpriteFrames_h0a55")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n20a5")
+
+[node name="Interaction" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="Shape" type="CollisionShape2D" parent="Interaction"]
+shape = SubResource("CircleShape2D_wpoev")
+
+[connection signal="area_entered" from="Interaction" to="." method="_on_interaction_area_entered"]
+[connection signal="area_exited" from="Interaction" to="." method="_on_interaction_area_exited"]

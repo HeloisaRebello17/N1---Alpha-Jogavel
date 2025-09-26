@@ -1,0 +1,190 @@
+[gd_scene load_steps=17 format=3 uid="uid://cmroq5oe5dd1n"]
+
+[ext_resource type="Texture2D" uid="uid://ce8khtcg0vj4o" path="res://Assets/Imagens/mapa.jpg" id="1_yl6w1"]
+[ext_resource type="PackedScene" uid="uid://dj2bm6lo3cv7p" path="res://Assets/Mains/jogador.tscn" id="2_xt5f4"]
+[ext_resource type="Script" uid="uid://btsgjrbb3syfg" path="res://Assets/Scripts/entrada_castelo_1.gd" id="3_pvloj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cav2d"]
+radius = 33.2415
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g6o7j"]
+radius = 29.5466
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_272dw"]
+radius = 29.1548
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6s0f"]
+radius = 27.4591
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0311t"]
+radius = 27.7308
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_egnuf"]
+radius = 29.0689
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l08hr"]
+radius = 30.0666
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ev7mh"]
+radius = 35.5106
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsji6"]
+radius = 32.0156
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lkibp"]
+radius = 32.0156
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xt5f4"]
+radius = 39.26
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xt5f4"]
+vertices = PackedVector2Array(1050.28, 613.641, 839.43, 608.68, 1005.01, 595.953, 1011.59, 513.383, 975.367, 516.5, 306.078, 516.656, 293.18, 663.063, 233.141, 640.727, 216.258, 510.367, 266.648, 390.211, 326.422, 405.797, 343.477, 296.852, 375.344, 307.961, 473.906, 225.25, 484.188, 241.609, 661.961, 168.453, 645.969, 204.75, 975.172, 404.148, 937.82, 409.938, 799.453, 210.75, 791.461, 236.969)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 5, 9, 11), PackedInt32Array(12, 10, 11), PackedInt32Array(12, 11, 13, 14), PackedInt32Array(14, 13, 15, 16), PackedInt32Array(17, 3, 4, 18), PackedInt32Array(19, 17, 18, 20), PackedInt32Array(20, 16, 15, 19)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(224, 648, 206, 509, 258, 385, 337, 289, 470, 216, 662, 158, 805, 202, 984, 399, 1021, 510, 1065, 624, 640, 614, 991, 587, 966, 520, 929, 415, 786, 246, 646, 215, 488, 251, 383, 315, 336, 409, 316, 518, 302, 677)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xt5f4"]
+size = Vector2(185.75, 157)
+
+[node name="World" type="Node2D"]
+
+[node name="Scenario" type="Node" parent="."]
+
+[node name="Map" type="Sprite2D" parent="Scenario"]
+position = Vector2(639, 628)
+scale = Vector2(1.74185, 0.957187)
+texture = ExtResource("1_yl6w1")
+
+[node name="Ponto" type="Node2D" parent="Scenario"]
+
+[node name="01" type="Area2D" parent="Scenario/Ponto"]
+collision_layer = 8
+
+[node name="01" type="Marker2D" parent="Scenario/Ponto/01"]
+position = Vector2(245, 516)
+
+[node name="Shape" type="CollisionShape2D" parent="Scenario/Ponto/01"]
+position = Vector2(243, 514)
+shape = SubResource("CircleShape2D_cav2d")
+
+[node name="02" type="Area2D" parent="Scenario/Ponto"]
+collision_layer = 8
+
+[node name="02" type="Marker2D" parent="Scenario/Ponto/02"]
+position = Vector2(263, 390)
+
+[node name="Shape" type="CollisionShape2D" parent="Scenario/Ponto/02"]
+position = Vector2(263, 389)
+shape = SubResource("CircleShape2D_g6o7j")
+
+[node name="03" type="Area2D" parent="Scenario/Ponto"]
+collision_layer = 8
+
+[node name="03" type="Marker2D" parent="Scenario/Ponto/03"]
+position = Vector2(343, 289)
+
+[node name="Shape" type="CollisionShape2D" parent="Scenario/Ponto/03"]
+position = Vector2(343, 289)
+shape = SubResource("CircleShape2D_272dw")
+
+[node name="04" type="Area2D" parent="Scenario/Ponto"]
+collision_layer = 8
+
+[node name="04" type="Marker2D" parent="Scenario/Ponto/04"]
+position = Vector2(474, 212)
+
+[node name="Shape" type="CollisionShape2D" parent="Scenario/Ponto/04"]
+position = Vector2(474, 212)
+shape = SubResource("CircleShape2D_x6s0f")
+
+[node name="05" type="Area2D" parent="Scenario/Ponto"]
+collision_layer = 8
+
+[node name="05" type="Marker2D" parent="Scenario/Ponto/05"]
+position = Vector2(661, 160)
+
+[node name="Shape" type="CollisionShape2D" parent="Scenario/Ponto/05"]
+position = Vector2(663, 158)
+shape = SubResource("CircleShape2D_0311t")
+
+[node name="06" type="Area2D" parent="Scenario/Ponto"]
+collision_layer = 8
+
+[node name="06" type="Marker2D" parent="Scenario/Ponto/06"]
+position = Vector2(813, 212)
+
+[node name="Shape" type="CollisionShape2D" parent="Scenario/Ponto/06"]
+position = Vector2(811, 211)
+shape = SubResource("CircleShape2D_egnuf")
+
+[node name="08" type="Area2D" parent="Scenario/Ponto"]
+collision_layer = 8
+
+[node name="08" type="Marker2D" parent="Scenario/Ponto/08"]
+position = Vector2(981, 391)
+
+[node name="Shape" type="CollisionShape2D" parent="Scenario/Ponto/08"]
+position = Vector2(979, 393)
+shape = SubResource("CircleShape2D_l08hr")
+
+[node name="09" type="Area2D" parent="Scenario/Ponto"]
+collision_layer = 8
+
+[node name="09" type="Marker2D" parent="Scenario/Ponto/09"]
+position = Vector2(1021, 515)
+
+[node name="Shape" type="CollisionShape2D" parent="Scenario/Ponto/09"]
+position = Vector2(1024, 517)
+shape = SubResource("CircleShape2D_ev7mh")
+
+[node name="10" type="Area2D" parent="Scenario/Ponto"]
+collision_layer = 8
+
+[node name="10" type="Marker2D" parent="Scenario/Ponto/10"]
+position = Vector2(1065, 627)
+
+[node name="Shape" type="CollisionShape2D" parent="Scenario/Ponto/10"]
+position = Vector2(1067, 629)
+shape = SubResource("CircleShape2D_qsji6")
+
+[node name="11" type="Area2D" parent="Scenario/Ponto"]
+collision_layer = 8
+
+[node name="11" type="Marker2D" parent="Scenario/Ponto/11"]
+position = Vector2(651, 616)
+
+[node name="Shape" type="CollisionShape2D" parent="Scenario/Ponto/11"]
+position = Vector2(654, 617)
+shape = SubResource("CircleShape2D_lkibp")
+
+[node name="Jogador" parent="Scenario" instance=ExtResource("2_xt5f4")]
+position = Vector2(245, 510)
+collision_layer = 1
+collision_mask = 1
+navigation_agent_path = NodePath("NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Scenario/Jogador"]
+path_postprocessing = 1
+debug_enabled = true
+
+[node name="Interactor" type="Area2D" parent="Scenario/Jogador"]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenario/Jogador/Interactor"]
+shape = SubResource("CircleShape2D_xt5f4")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Scenario"]
+navigation_polygon = SubResource("NavigationPolygon_xt5f4")
+
+[node name="Entrada_Castelo_1" type="Node2D" parent="." groups=["entrance"]]
+script = ExtResource("3_pvloj")
+metadata/target_scene = "res://assets/Levels/fase_01.tscn"
+
+[node name="Area" type="Area2D" parent="Entrada_Castelo_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada_Castelo_1/Area"]
+top_level = true
+position = Vector2(221, 614)
+shape = SubResource("RectangleShape2D_xt5f4")
+debug_color = Color(0.91961, 0.261184, 0.28847, 0.419608)
+
+[connection signal="mouse_entered" from="Entrada_Castelo_1/Area" to="Entrada_Castelo_1" method="_on_area_mouse_entered"]
