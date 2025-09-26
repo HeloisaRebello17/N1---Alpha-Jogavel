@@ -2,7 +2,7 @@ Faculdade Católica de Santa Catarina (PAC): Entregar um alpha jogável com come
 
 Alunos: Heitor Lopes Reis, Heloísa Rebello Cabral, Henrique Xavier Klappoth, Lucas Rogério Mendonça e Rodrigo Xavier Klappoth. 
 
-# PAC-
+# PAC
 === PAC GAME - Versão Alpha ===
 
 Requisitos mínimos:
